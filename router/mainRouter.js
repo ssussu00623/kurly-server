@@ -1,3 +1,4 @@
+import React from 'react';
 import express from 'express';
 import * as controller from '../controller/mainController.js';
 
