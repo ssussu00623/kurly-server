@@ -203,7 +203,7 @@ CREATE TABLE `notice` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 -- ########################################
--- Dumping data for table `orderList` 9.결제 테이블
+-- Dumping data for table `orderlist` 9.결제 테이블
 -- ########################################
 DROP TABLE IF EXISTS `orderlist`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;

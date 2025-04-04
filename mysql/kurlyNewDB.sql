@@ -175,11 +175,11 @@ CREATE TABLE `notice` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 -- ########################################
--- Dumping data for table `orderList` 9.결제 테이블
+-- Dumping data for table `orderlist` 9.결제 테이블
 -- ########################################
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `orderList` (
+CREATE TABLE `orderlist` (
   `oid` 			int		 		 PRIMARY KEY 	auto_increment,
   `id`				varchar(20)		 NOT NULL,
   `pid`				int				 NOT NULL,
@@ -187,12 +187,12 @@ CREATE TABLE `orderList` (
   `qty`				int 			 NOT NULL,
   `total_price` 	int				 NOT NULL,
   `odate` 			datetime		 NOT NULL,
-   CONSTRAINT `ORDERLIST_FK_ID` FOREIGN KEY (`id`) REFERENCES `member` (`id`),
-   CONSTRAINT `ORDERLIST_FK_PID` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
+   CONSTRAINT `orderlist_FK_ID` FOREIGN KEY (`id`) REFERENCES `member` (`id`),
+   CONSTRAINT `orderlist_FK_PID` FOREIGN KEY (`pid`) REFERENCES `product` (`pid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-INSERT INTO orderList (id, pid, tid, qty, total_price, odate)
+INSERT INTO orderlist (id, pid, tid, qty, total_price, odate)
 VALUES 
 ('test1', 1,  'TID001', 10, 10000, now()),
 ('test2', 2,  'TID002', 8, 20000, now()),

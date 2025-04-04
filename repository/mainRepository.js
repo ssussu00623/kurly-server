@@ -15,7 +15,7 @@ export const getProductList = async({category}) => {
           order by pdate desc;`;
   }else if(category === 'best'){
      sql=`select vw.* , concat(dc, '%') as discountRate
-            from  view_category_pro_list as vw, orderList as py
+            from  view_category_pro_list as vw, orderlist as py
            where vw.pid = py.pid
              and   py.qty >= 8
      `; 
@@ -61,6 +61,8 @@ export const getCategoryTitleList = async() =>{
   const sql =`select * from category`;
 
   const [result] = await db.execute(sql);
+  console.log('result>>>>>>', result);
+  
   return result;
 };
 
