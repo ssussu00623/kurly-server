@@ -203,7 +203,7 @@ export const getOrder = async ({ id }) => {
             order_details 
         WHERE 
             id = ?;
-    `;
+    `; 
 
     const [result] = await db.execute(sql, [id]);
     return result;
