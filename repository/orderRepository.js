@@ -18,7 +18,7 @@ export const add = ({ qty, id, pid, total_price, tid }) => {
 /*************************************
         order 페이지에서 주문 정보 가져오기
 *************************************/
-export const getorderlist = async ({ id, checkedItems }) => {
+export const getOrderList = async ({ id, checkedItems }) => {
 
         if (!Array.isArray(checkedItems) || checkedItems.length === 0) {
                 console.error("checkedItems 없음", checkedItems);

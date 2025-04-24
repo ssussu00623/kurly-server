@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router
-    .post('/all', controller.getorderlist)
+    .post('/all', controller.getOrderList)
     .post('/add', controller.add);
 
 
