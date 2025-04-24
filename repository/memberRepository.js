@@ -198,7 +198,7 @@ export const getOrder = async ({ id }) => {
             odate as order_date, 
             brand,
             subject,
-            concat('http://localhost:9000/',JSON_UNQUOTE(JSON_EXTRACT(upload_img, '$[0]'))) as upload_img
+            concat('http://13.209.41.189:9000/',JSON_UNQUOTE(JSON_EXTRACT(upload_img, '$[0]'))) as upload_img
         FROM 
             order_details 
         WHERE 
