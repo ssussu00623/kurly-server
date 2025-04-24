@@ -1,24 +1,22 @@
 import * as repository from '../repository/orderRepository.js'
 
 
-/*************************************
-    결제 성공시 주문내역 테이블에 값 insert
-*************************************/
 export const add = (req, res) => {
     const { orderlist } = req.body;
     if (!orderlist?.length) {
         console.error("주문 데이터가 없음");
-        return res.end(); // 데이터 없으면 에러메세지 출력 후 종료
+        return res.status(400).json({ message: "주문 데이터가 없습니다." }); // 상태 코드 400과 함께 오류 메시지 반환
     }
 
     Promise.all(orderlist.map(repository.add))
-        .then(results => res.json({ count: results.length }))
+        .then(results => {
+            res.json({ count: results.length });
+        })
         .catch(error => {
             console.error("주문 저장 실패:", error);
-            res.end();
+            res.status(500).json({ message: "주문 저장에 실패했습니다." }); // 내부 서버 오류 처리
         });
 };
-
 
 
 /*************************************
