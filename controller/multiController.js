@@ -50,7 +50,7 @@ export const fileUploadMultiple = (req, res) => {
       let oldFiles = [];
       for (let file of req.files) {
         originalname.push(file.originalname);
-        uploadname.push(`http://13.209.41.189:9000/${file.path}`);
+        uploadname.push(file.path);
         oldFiles.push(file.filename);
       }
       res.json({
