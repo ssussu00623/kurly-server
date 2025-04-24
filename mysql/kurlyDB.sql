@@ -273,7 +273,7 @@ select pid
      , pdate
      , cate_depth1
      , cate_depth2
-from product; 
+from product;  
 
 -- ########################################
 -- 12.view_cart_list 뷰테이블 생성

@@ -132,7 +132,6 @@ export const getRecentlyViewItem = async({pidArray}) =>{
   const sql = `select pid, concat('http://13.209.41.189:9000/',JSON_UNQUOTE(JSON_EXTRACT(upload_img, '$[0]'))) as upload_img 
                from product 
                where pid in (${pidList}) `;
-
   const [result] = await db.execute(sql, pidArray);
   return result;
 }

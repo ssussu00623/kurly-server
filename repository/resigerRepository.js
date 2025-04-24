@@ -23,7 +23,7 @@ export const resigerProduct = async (formData ) => {
                                     detail_org_imgs,
                                     pdate
                                     )
-                values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now())
+                values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,now()) 
     `;
     const value=[
         formData.brend ,

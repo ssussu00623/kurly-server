@@ -15,7 +15,7 @@ CREATE TABLE `member` (
   `detailaddress` VARCHAR(80)     NOT NULL,
   `zipcode`       VARCHAR(10)     NOT NULL,
   `type`          CHAR(1),
-  `wish`		      json,	
+  `wish`		      json,	 
   `reg_date`      DATETIME      NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -241,7 +241,7 @@ select pid
 	 , concat(format(price - (price * (dc * 0.01)),0),'원') as discountedPrice
 	 , concat('http://13.209.41.189:9000/',JSON_UNQUOTE(JSON_EXTRACT(upload_img, '$[0]'))) as image_url
      , pdate
-     , cate_depth1
+     , cate_depth1 
      , cate_depth2
 from product; 
 
